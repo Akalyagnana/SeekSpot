@@ -1,5 +1,10 @@
 {
-    "users":[
-        
-    ]
+  "users": [
+    {
+      "id": "1d46",
+      "username": "wilsonpaulraj",
+      "email": "wilsonpaulraj@gmail.com",
+      "password": "123@erog"
+    }
+  ]
 }

@@ -1,32 +1,29 @@
-import React, { useState, useRef,useEffect} from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
-import { Link,withRouter } from 'react-router-dom';
-import axios from 'axios'; // Import Axios
-
+import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import "./Login.css";
 
-const Login = ({history}) => {
+const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const usernameInputRef = useRef(null);
   const passwordInputRef = useRef(null);
-  
- 
+  const navigate = useNavigate(); 
+
   useEffect(() => {
-    // Retrieve saved username from localStorage
     const savedUsername = localStorage.getItem('savedUsername');
     if (savedUsername) {
       setUsername(savedUsername);
     }
-  }, []); // Run only once on component mount
+  }, []);
 
   const handleUsernameChange = (event) => {
     const newUsername = event.target.value;
     setUsername(newUsername);
     localStorage.setItem('savedUsername', newUsername);
-    // Change color based on username length
     if (newUsername.length < 6) {
       usernameInputRef.current.style.color = 'red';
     } else {
@@ -37,7 +34,6 @@ const Login = ({history}) => {
   const handlePasswordChange = (event) => {
     const newPassword = event.target.value;
     setPassword(newPassword);
-    // Validate password
     if (newPassword.length < 6) {
       setPasswordError('Password must be at least 6 characters long.');
     } else {
@@ -47,18 +43,17 @@ const Login = ({history}) => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
-    // Validate form data (optional)
-    
-    // Perform login logic
+
     try {
-      const response = await axios.post("http://localhost:8000/login",  { username, password });
-      if (response.status === 200) {
+      const { data: users } = await axios.get("http://localhost:8000/users");
+
+      const matchedUser = users.find(user => user.username === username && user.password === password);
+
+      if (matchedUser) {
         console.log('Login successful!');
-        history.push('/home'); 
-        // Redirect to home page or perform any other actions
+        navigate('/');
       } else {
-        console.error('Login failed.');
+        console.error('Invalid username or password.');
       }
     } catch (error) {
       console.error('Error logging in:', error);
@@ -66,11 +61,10 @@ const Login = ({history}) => {
     setUsername('');
     setPassword('');
   };
-  
 
   return (
     <div className="login">
-         <Paper elevation={3} style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
+      <Paper elevation={3} style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
         <Typography>
           <h2>Login</h2>
           <br />
