@@ -1,5 +1,18 @@
 {
-    "users":[
-        
-    ]
+  "users": [
+    {
+      "id": "81f8",
+      "username": "akalya",
+      "email": "akalyagnanam@gmail.com",
+      "password": "akalya@21"
+    },
+    {
+      "id": "9b46",
+      "username": "wilsonn",
+      "email": "727722euai071@skcet.ac.in",
+      "password": "wilson@21"
+    }
+    
+    
+  ]
 }

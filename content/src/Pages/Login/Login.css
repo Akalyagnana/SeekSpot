@@ -3,9 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh; /* Set the height of the container to the full height of the viewport */
-    background-image: url("https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1224184972.1711670400&semt=sph");
-  background-size: cover; /* Cover the entire viewport */
-  background-position: center;
+    
   }
   
   .login > .MuiPaper-root {
@@ -35,6 +33,14 @@
     border-radius: 4px;
     box-sizing: border-box; /* Ensure padding and border are included in width */
   }
+  .video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; }
 
   
   
