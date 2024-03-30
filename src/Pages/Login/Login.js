@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import { getUsers } from '../../service';
 import "./Login.css";
 
 const Login = () => {
@@ -11,7 +11,7 @@ const Login = () => {
   const [passwordError, setPasswordError] = useState('');
   const usernameInputRef = useRef(null);
   const passwordInputRef = useRef(null);
-  const navigate = useNavigate(); // Use useNavigate hook for navigation
+  const navigate = useNavigate(); 
 
   useEffect(() => {
     const savedUsername = localStorage.getItem('savedUsername');
@@ -44,19 +44,9 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      // Fetch user data from the database
-      const { data: users } = await axios.get("http://localhost:8000/users");
 
-      // Define admin credentials
-      const adminUsername = 'admin';
-      const adminPassword = 'adminpassword';
+      const users = await getUsers();
 
-      // Check if the entered username and password match with admin credentials
-      if (username === adminUsername && password === adminPassword) {
-        console.log('Admin login successful!');
-        navigate('/admin'); // Navigate to admin page
-      } else {
-        // Check if the entered username and password match with any user data
         const matchedUser = users.find(user => user.username === username && user.password === password);
 
         if (matchedUser) {
@@ -66,7 +56,7 @@ const Login = () => {
           console.error('Invalid username or password.');
         }
       }
-    } catch (error) {
+     catch (error) {
       console.error('Error logging in:', error);
     }
     setUsername('');

@@ -3,7 +3,7 @@ import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import { Link, useNavigate } from 'react-router-dom';
 import './Register.css';
-import axios from 'axios';
+import { addUser } from '../../service';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -84,12 +84,12 @@ const Register = () => {
     localStorage.setItem('username', username);
 
     try {
-      const response = await axios.post('http://localhost:8000/users', {
-        username,
-        email,
-        password,
-      });
-
+      const user = {
+        username: username,
+        email: email,
+        password: password
+      }
+      const response = await addUser(user);
       console.log('Registration successful!', response.data);
       navigate('/');
       
