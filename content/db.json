@@ -1,6 +1,7 @@
 {
   "users": [
     {
+<<<<<<< HEAD
       "id": "81f8",
       "username": "akalya",
       "email": "akalyagnanam@gmail.com",
@@ -14,5 +15,12 @@
     }
     
     
+=======
+      "id": "1d46",
+      "username": "wilsonpaulraj",
+      "email": "wilsonpaulraj@gmail.com",
+      "password": "123@erog"
+    }
+>>>>>>> 6b1346a0240d0042d86d0e1e120c3bbcd8e4bfa0
   ]
 }

@@ -45,7 +45,11 @@ const Register = () => {
   const handleEmailChange = (event) => {
     const newEmail = event.target.value;
     setEmail(newEmail);
+<<<<<<< HEAD
     if (!/^\w+([\.-]?\w+)@\w+([\.-]?\w+)(\.\w{2,3})+$/.test(newEmail)) {
+=======
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(newEmail)) {
+>>>>>>> 6b1346a0240d0042d86d0e1e120c3bbcd8e4bfa0
       setEmailError('Invalid email format');
       emailInputRef.current.style.color = 'red';
     } else {
@@ -92,6 +96,7 @@ const Register = () => {
 
       console.log('Registration successful!', response.data);
       navigate('/');
+      
     } catch (error) {
       console.error('Error registering user:', error);
     }
