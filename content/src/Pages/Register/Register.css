@@ -1,0 +1,39 @@
+.reg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set the height of the container to the full height of the viewport */
+    background-image: url("https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1224184972.1711670400&semt=sph");
+  background-size: cover; /* Cover the entire viewport */
+  background-position: center;  }
+  
+  .reg > .MuiPaper-root {
+    /* Adjust the width and other styles of the Paper component */
+    padding: 20px;
+    width: 400px; /* Set the width of the Paper component */
+    height: 400px;
+  }
+  /* CustomInput.css */
+
+/* Style for input[type="text"] */
+.reg input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+  }
+  
+  /* Style for input[type="password"] */
+  .reg input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure padding and border are included in width */
+  }
+
+  
+  
