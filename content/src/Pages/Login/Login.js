@@ -11,11 +11,7 @@ const Login = () => {
   const [passwordError, setPasswordError] = useState('');
   const usernameInputRef = useRef(null);
   const passwordInputRef = useRef(null);
-<<<<<<< HEAD
   const navigate = useNavigate(); // Use useNavigate hook for navigation
-=======
-  const navigate = useNavigate(); 
->>>>>>> 6b1346a0240d0042d86d0e1e120c3bbcd8e4bfa0
 
   useEffect(() => {
     const savedUsername = localStorage.getItem('savedUsername');
@@ -47,7 +43,6 @@ const Login = () => {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-<<<<<<< HEAD
     try {
       // Fetch user data from the database
       const { data: users } = await axios.get("http://localhost:8000/users");
@@ -70,19 +65,6 @@ const Login = () => {
         } else {
           console.error('Invalid username or password.');
         }
-=======
-
-    try {
-      const { data: users } = await axios.get("http://localhost:8000/users");
-
-      const matchedUser = users.find(user => user.username === username && user.password === password);
-
-      if (matchedUser) {
-        console.log('Login successful!');
-        navigate('/');
-      } else {
-        console.error('Invalid username or password.');
->>>>>>> 6b1346a0240d0042d86d0e1e120c3bbcd8e4bfa0
       }
     } catch (error) {
       console.error('Error logging in:', error);
@@ -93,13 +75,10 @@ const Login = () => {
 
   return (
     <div className="login">
-<<<<<<< HEAD
        <video autoPlay loop muted className="video-bg">
           <source src="https://cdn.pixabay.com/vimeo/201118756/animation-7529.mp4?width=640&hash=f307e3741dd779021a42cf6ee16d1d75f5274825" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-=======
->>>>>>> 6b1346a0240d0042d86d0e1e120c3bbcd8e4bfa0
       <Paper elevation={3} style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}>
         <Typography>
           <h2>Login</h2>
