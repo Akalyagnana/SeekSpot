@@ -6,24 +6,24 @@ import './Register.css';
 import { addUser } from '../../service';
 
 const Register = () => {
-  const [username, setUsername] = useState('');
+  const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const [emailError, setEmailError] = useState('');
-  const usernameInputRef = useRef(null);
+  const userNameInputRef = useRef(null);
   const emailInputRef = useRef(null);
   const passwordInputRef = useRef(null);
 
   const navigate = useNavigate();
 
-  const handleUsernameChange = (event) => {
-    const newUsername = event.target.value;
-    setUsername(newUsername);
-    if (newUsername.length < 6) {
-      usernameInputRef.current.style.color = 'red';
+  const handleUserNameChange = (event) => {
+    const newUserName = event.target.value;
+    setUserName(newUserName);
+    if (newUserName.length < 6) {
+      userNameInputRef.current.style.color = 'red';
     } else {
-      usernameInputRef.current.style.color = 'green';
+      userNameInputRef.current.style.color = 'green';
     }
   };
 
@@ -54,7 +54,7 @@ const Register = () => {
     }
   };
 
-  const handleUsernameBlur = () => {
+  const handleUserNameBlur = () => {
     emailInputRef.current.focus();
   };
 
@@ -62,7 +62,7 @@ const Register = () => {
     passwordInputRef.current.focus();
   };
 
-  const handleUsernameKeyDown = (event) => {
+  const handleUserNameKeyDown = (event) => {
     if (event.key === 'Enter') {
       emailInputRef.current.focus();
     }
@@ -77,15 +77,15 @@ const Register = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log('Form submitted!');
-    console.log('Username:', username);
+    console.log('Username:', userName);
     console.log('Email:', email);
     console.log('Password:', password);
 
-    localStorage.setItem('username', username);
+    localStorage.setItem('username', userName);
 
     try {
       const user = {
-        username: username,
+        userName: userName,
         email: email,
         password: password
       }
@@ -105,13 +105,13 @@ const Register = () => {
           <h2>Register for endless possibilities</h2>
           <br />
           <input
-            ref={usernameInputRef}
+            ref={userNameInputRef}
             type="text"
             placeholder="Username"
-            value={username}
-            onChange={handleUsernameChange}
-            onBlur={handleUsernameBlur}
-            onKeyDown={handleUsernameKeyDown}
+            value={userName}
+            onChange={handleUserNameChange}
+            onBlur={handleUserNameBlur}
+            onKeyDown={handleUserNameKeyDown}
           />
           <br />
           <input
@@ -136,7 +136,7 @@ const Register = () => {
           <br />
           <button onClick={handleSubmit}>Submit</button>
           <br />
-          <p>Already have an account? <Link to="/">Login</Link></p>
+          <p>Already have an account? <Link to="/login">Login</Link></p>
         </Typography>
       </Paper>
     </div>

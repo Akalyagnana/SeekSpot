@@ -1,0 +1,34 @@
+/* Navbar.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-items: center;
+    background-color: #007bff; /* Blue background color */
+    padding: 10px 20px;
+    padding: 10px 20px;
+  }
+  
+  .navbar-left {
+    flex: 1; /* Take up remaining space */
+  }
+  
+  .app-name {
+    font-size: 1.5rem;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-right a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  
+  .navbar-right a:hover {
+    text-decoration: underline;
+  }
+  
