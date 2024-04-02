@@ -1,0 +1,74 @@
+.head
+{
+    cursor:pointer;
+}
+.head .logo img{
+    width: 500px;
+}
+header
+{
+    background-color:rgba(76, 182, 220, 0.942);
+    color: rgb(155, 176, 193);
+}
+header li{
+    margin-right:30px;
+    transition: 0.5s;
+}
+header li a{
+    color: white;
+    transition: 0.5s;
+}
+header li a:hover{
+    color:crimson;
+    cursor:pointer;
+}
+.barIco
+{
+    font-size: 25px;
+    background-color: none;
+    color: #fff;
+    display: none;
+    border: none;
+}.card-container1 {
+    display: flex;
+    justify-content: space-around; /* You can use other values like 'space-between' or 'space-evenly' based on your preference */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  
+  .card1 {
+    width: 300px; /* Adjust the width according to your design */
+   
+   
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .card1 h2 {
+    margin-top: 0;
+  }
+  
+  .card1 p {
+    margin-bottom: 0;
+  }
+.papercontent{
+    height: 700px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+  }
+  
+  

@@ -46,8 +46,10 @@ const Login = () => {
     try {
 
       const users = await getUsers();
+      console.log(users);
 
-        const matchedUser = users.find(user => user.username === username && user.password === password);
+        const matchedUser = users.find(user => user.userName == username && user.password == password);
+        console.log(matchedUser);
 
         if (matchedUser) {
           console.log('Login successful!');
